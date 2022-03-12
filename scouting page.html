@@ -1,0 +1,243 @@
+<head>
+    <title>Scouting Webpage Draft</title>
+    <title>My Page Title</title>
+    <link href="hawk.png" rel="icon" type="image/png">
+    <style type="text/css">
+        body {
+            width: 100%;
+            font-family: Arial, Verdana, sans-serif;
+            color: #665544;
+        }
+
+        #footer {
+            background-color: #efefef;
+            padding: 0.5em 0;
+            margin: 2%;
+        }
+
+        .column1of3,
+        .column2of3,
+        .column3of3 {
+            width: 30%;
+            float: left;
+            margin: 2%;
+        }
+
+        .column3of3 {
+            width: 30%;
+            float: left;
+            margin-right: 0%;
+        }
+    </style>
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <h1><img src="hawk.png" alt="Fusioncorp Logo">
+            Cistercian Scouting :)</h1>
+    </div>
+    <div>
+        <div id="content">
+            <!-- first column -->
+            <div class="column1of3">
+                <p>
+                <h1>Before Match</h1>
+                </p>
+                <form method="POST"
+                    action="https://script.google.com/macros/s/AKfycbzp0js1jY3OJz_OJAtZWkha1ixc7n1LkzZd_naBZqxYHewwYP4qidOhu6o1dX-JQKmE/exec">
+
+                    <label for="Email">Email</label>
+                    <input type="email" id="Email" name="Email">
+
+                    <p>
+
+                        <label for="TeamNum">Robot team number:</label>
+                        <input type="number" id="TeamNum" name="Team Number">
+                    <p>
+                        <label for="MatchNum">Match number:</label>
+                        <input type="name" id="MatchNum" name="Match Number">
+                    <p>
+                        <label for="Ally1Num">Ally 1 team number:</label>
+                        <input type="number" id="Ally1Num" name="Ally1Num">
+                    <p>
+                        <label for="Ally2Num">Ally 2 team number:</label>
+                        <input type="number" id="Ally2Num" name="Ally2Num">
+                    <p>
+                        <label for="Enemy1Num">Enemy 1 team number:</label>
+                        <input type="number" id="Enemy1Num" name="Enemy1Num">
+                    <p>
+                        <label for="Enemy2Num">Enemy 2 team number:</label>
+                        <input type="number" id="Enemy2Num" name="Enemy2Num">
+                    <p>
+                        <label for="Enemy3Num">Enemy 3 team number:</label>
+                        <input type="number" id="Enemy3Num" name="Enemy3Num">
+            </div>
+
+            <!-- second column -->
+            <div class="column2of3">
+                <p>
+                <h1>During Match</h1>
+                </p>
+
+                <!-- buttons at top-->
+
+                    <label for="Shots Missed">Shot missed</label>
+                    <input type="number" id="Shots Missed" value="0" name="Shots Missed"></button>
+                    <input type="button" onclick="incrementValue('Shots Missed')" value="+1" />
+                    <input type="button" onclick="decrementValue('Shots Missed')" value="-1" />
+
+                <p>
+
+                    <label for="UHmade">Lower Hub shot made</label>
+                    <input type="number" id="UHmade" value="0" name="UH Made"></input>
+                    <input type="button" onclick="incrementValue('UHmade')" value="+1" />
+                    <input type="button" onclick="decrementValue('UHmade')" value="-1" />
+
+                <p>
+
+                    <label for="LHmade">Upper hub shot made</label>
+                    <input type="number" id="LHmade" value="0" name="LH Made">
+                    <input type="button" onclick="incrementValue('LHmade')" value="+1" />
+                    <input type="button" onclick="decrementValue('LHmade')" value="-1" />
+
+
+                <p>
+                <h2>Climb:</h2>
+                </p>
+
+                <input type="radio" id="NoClimb" name="Climb" value="NoClimb">
+                <label for="NoClimb">No climb/Failed climb</label> <br>
+                
+                <input type="radio" id="Rung1" name="Climb" value="Rung1">
+                <label for="Rung1">Rung 1 climb</label> <br>
+
+                <input type="radio" id="Rung2" name="Climb" value="Rung2">
+                <label for="Rung2">Rung 2 climb</label> <br>
+
+                <input type="radio" id="Rung3" name="Climb" value="Rung3">
+                <label for="Rung3">Rung 3 climb</label> <br>
+
+                <input type="radio" id="Rung4" name="Climb" value="Rung4">
+                <label for="Rung4">Rung 4 climb</label> <br>
+
+
+                <p>
+                <h2>Auton:</h2>
+                </p>
+
+                <input type="radio" id="NoAuton" name="Auton Balls" value="0/NoAuton">
+                <label for="NoClimb">No ball auton</label><br>
+
+                <input type="radio" id="1BallA" name="Auton Balls" value="1">
+                <label for="Rung1">1 ball auton</label><br>
+
+                <input type="radio" id="2BallA" name="Auton Balls" value="2">
+                <label for="Rung2">2 ball auton</label><br>
+
+                <input type="radio" id="3BallA" name="Auton Balls" value="3">
+                <label for="Rung3">3 ball auton</label><br>
+
+                <input type="radio" id="4BallA" name="Auton Balls" value="4">
+                <label for="Rung4">4 ball auton</label><br>
+
+                <input type="radio" id="5BallA" name="Auton" value="5">
+                <label for="Rung4">5 ball auton</label><br>
+
+            </div>
+            <div class="column3of3">
+                <p>
+                <h1>After Match</h1>
+                </p>
+
+                <label for="TeamPoints">Total points for ally team:</label>
+                <input type="text" id="TeamPoints" name="Total Ally Points"><br>
+
+                <label for="EnemyPoints">Total points for enemy team:</label>
+                <input type="text" id="EnemyPoints" name="Total Enemy Points"><br>
+
+                <label for="Ally Penalties">Ally Penalties:</label>
+                <input type="text" id="Ally Penalties" name="Ally Penalties"><br>
+
+                <label for="Enemy Penalties"> Enemy Penalties:</label>
+                <input type="text" id="Enemy Penalties" name="Enemy Penalties"><br>
+
+                <p>
+                <h2>Playstyle:</h2>
+                </p>
+
+                <input type="radio" id="Offensive" name="Playstyle" value="Offensive">
+                <label for="Offensive">Offensive playstyle</label><br>
+
+                <input type="radio" id="Defensive" name="Playstyle" value="Defensive">
+                <label for="Defensive">Defensive playstyle</label><br>
+
+                <p>
+                <h2>Match Outcome:</h2>
+                </p>
+
+                <input type="radio" id="Win" name="Outcome" value="Win">
+                <label for="Win">Victory</label><br>
+
+                <input type="radio" id="Loss" name="Outcome" value="Loss">
+                <label for="Loss">Defeat</label><br>
+                
+                <input type="radio" id="Draw" name="Outcome" value="Draw">
+                <label for="Draw">Draw</label><br>
+
+
+                <p>
+                <h2>Intake:</h2>
+                </p>
+
+                <input type="radio" id="Human" name="Intake" value="Human">
+                <label for="Human">Human Intake</label><br>
+
+                <input type="radio" id="Ground" name="Intake" value="Ground">
+                <label for="Ground">Ground Intake</label><br>
+
+                <p>
+                <h2>Shooter Versatility:</h2>
+                </p>
+
+                <input type="radio" id="NoShoot" name="Shooter Versatility" value="NoShoot">
+                <label for="NoShoot">Unable to shoot</label><br>
+
+                <input type="radio" id="LowerH" name="Shooter Versatility" value="LowerH">
+                <label for="LowerH">Only able to shoot lower hub</label><br>
+
+                <input type="radio" id="UpperH" name="Shooter Versatility" value="UpperH">
+                <label for="UpperH">Only able to shoot upper hub</label><br>
+
+                <input type="radio" id="BothH" name="Shooter Versatility" value="BothH">
+                <label for="BothH">Able to shoot both hubs</label><br>
+
+                <p>
+
+                <button type="submit">Send</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>  ©2022 Archer O., Rishabh R.</p>
+    </div>
+</body>
+
+<!-- javascript code for incrementing/decrementing button values -->
+<script type="text/javascript">
+    function incrementValue(id) {
+        var value = parseInt(document.getElementById(id).value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        document.getElementById(id).value = value;
+    }
+
+    function decrementValue(id) {
+        var value = parseInt(document.getElementById(id).value, 10);
+        value = isNaN(value) ? 0 : value;
+        value--;
+        document.getElementById(id).value = value;
+    }
+</script>
